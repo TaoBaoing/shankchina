@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using HH.Base;
 
 namespace 爬虫
 {
@@ -18,15 +19,14 @@ namespace 爬虫
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //http://data.eastmoney.com/DataCenter_V3/gdzjc.ashx?pagesize=50&page=3&js=var%20diSTAHjb&param=&sortRule=-1&sortType=BDJZ&tabid=jzc&code=&name=&rt=48633334
-
-            //http://data.eastmoney.com/DataCenter_V3/gdzjc.ashx?pagesize=50&page=2&js=var%20rYXLAFav&param=&sortRule=-1&sortType=BDJZ&tabid=jzc&code=&name=&rt=48633327
+    
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Dfcf d=new Dfcf();
+            d.Parser();
         }
-
+      
     }
 }

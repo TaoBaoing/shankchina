@@ -15,6 +15,11 @@ namespace 爬虫
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            if (DateTime.Now > new DateTime(2016, 4, 15))
+            {
+                MessageBox.Show("试用过期");
+                return;
+            }
             Application.Run(new Form1());
         }
     }

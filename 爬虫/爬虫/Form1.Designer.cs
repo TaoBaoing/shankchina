@@ -47,6 +47,8 @@
             // cbxDfcf
             // 
             this.cbxDfcf.AutoSize = true;
+            this.cbxDfcf.Checked = true;
+            this.cbxDfcf.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxDfcf.Location = new System.Drawing.Point(17, 20);
             this.cbxDfcf.Name = "cbxDfcf";
             this.cbxDfcf.Size = new System.Drawing.Size(72, 16);
