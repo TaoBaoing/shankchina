@@ -31,9 +31,10 @@ namespace 爬虫
 
        protected abstract string WebSiteName { get; }
         protected abstract string BaseUrl { get; }
+        protected abstract ConfigWeb ConfigWeb { get; }
 
         protected string TxtName {
-            get { return Path.Combine(mConfig.SaveFilePath, WebSiteName + ".txt"); }
+            get { return Path.Combine(mConfig.SaveFilePath, ConfigWeb.TxtName); }
         }
        protected void WriteTxt(string value)
        {

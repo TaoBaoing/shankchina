@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using HH.HtmlParser;
 
@@ -32,11 +33,12 @@ namespace 爬虫
                 foreach (string value in values)
                 {
                     var date = Convert.ToDateTime(value.Split(',')[15]);
-                    if (date.AddMonths(1) > DateTime.Today)
+                    if (date.AddDays(ConfigWeb.Days) > DateTime.Today)
                     {
                         WriteTxt(value);
                     }
                 }
+                //Thread.Sleep(1000);
             }
             #endregion
 
@@ -61,11 +63,12 @@ namespace 爬虫
                 foreach (string value in values)
                 {
                     var date = Convert.ToDateTime(value.Split(',')[15]);
-                    if (date.AddMonths(1) > DateTime.Today)
+                    if (date.AddDays(ConfigWeb.Days) > DateTime.Today)
                     {
                         WriteTxt(value);
                     }
                 }
+                //Thread.Sleep(1000);
             }
             #endregion
         }
@@ -78,5 +81,7 @@ namespace 爬虫
         {
             get { return "http://data.eastmoney.com/executive/gdzjc.html"; }
         }
+
+        protected override ConfigWeb ConfigWeb { get { return mConfig.ConfigWebs.FirstOrDefault(x=>x.WebName.Contains(WebSiteName) ||x.WebUrl.Contains(BaseUrl)); } }
     }
 }
